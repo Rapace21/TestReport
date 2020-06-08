@@ -1,4 +1,4 @@
-package fr.test.report;
+package io.github.wazoakarapace;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

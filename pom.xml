@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fr.test.report</groupId>
+    <groupId>io.github.wazoakarapace</groupId>
     <artifactId>testreport</artifactId>
     <version>1.5</version>
 
@@ -17,22 +17,8 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <!-- Urls -->
-        <scm.host.url>http://10.86.240.4</scm.host.url>
-        <repository.host.url>http://10.86.240.1:8087</repository.host.url>
-        <sonar.host.url>http://10.86.240.4:8082</sonar.host.url>
     </properties>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <url>${repository.host.url}/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>releases</id>
-            <url>${repository.host.url}/nexus/content/repositories/releases</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <plugins>

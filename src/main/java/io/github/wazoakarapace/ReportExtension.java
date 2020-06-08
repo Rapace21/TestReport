@@ -1,4 +1,4 @@
-package fr.test.report;
+package io.github.wazoakarapace;
 
 import static com.lowagie.text.Element.ALIGN_CENTER;
 import static com.lowagie.text.Rectangle.LEFT;

@@ -7,7 +7,7 @@
 
     </Appenders>
     <Loggers>
-        <logger name="fr.test.report.ReportExtension" level="info" additivity="false">
+        <logger name="io.github.wazoakarapace.ReportExtension" level="info" additivity="false">
             <AppenderRef ref="ConsoleTest"/>
         </logger>
         <Root level="info">

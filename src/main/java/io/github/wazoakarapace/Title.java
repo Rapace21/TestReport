@@ -1,4 +1,4 @@
-package fr.test.report;
+package io.github.wazoakarapace;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Description {
+public @interface Title {
     public String value();
 
 }
