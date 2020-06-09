@@ -12,6 +12,13 @@ jobs:
 #             cat <(echo -e "${{ secrets.GPG_PRIVATE_KEY }}") | gpg --batch --import
 #             gpg --list-secret-keys --keyid-format LONG
       - uses: actions/checkout@v2
+      - name: Set up Java for publishing to Maven Central Repository
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+          server-id: ossrh
+          server-username: ${{ secrets.OSSRH_USERNAME }}
+          server-password: ${{ secrets.OSSRH_TOKEN }}
       - name: Release to Central Repository
         uses: samuelmeuli/action-maven-publish@master
         with:
@@ -19,13 +26,7 @@ jobs:
           gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
           ossrh_username: ${{ secrets.OSSRH_USERNAME }}
           ossrh_password: ${{ secrets.OSSRH_TOKEN }}
-#       - name: Set up Java for publishing to Maven Central Repository
-#         uses: actions/setup-java@v1
-#         with:
-#           java-version: 1.8
-#           server-id: ossrh
-#           server-username: ${{ secrets.OSSRH_USERNAME }}
-#           server-password: ${{ secrets.OSSRH_TOKEN }}
+
 #       - id: publish-to-central
 #         name: Publish to Central Repository
 #         env:
