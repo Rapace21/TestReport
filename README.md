@@ -10,7 +10,7 @@ Maven dependency :
 <dependency>
    <groupId>io.github.wazoakarapace</groupId>
    <artifactId>testreport</artifactId>
-   <version>1.6</version>
+   <version>1.8</version>
  </dependency>
  ```
  
