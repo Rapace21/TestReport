@@ -6,7 +6,15 @@
 
     <groupId>io.github.wazoakarapace</groupId>
     <artifactId>testreport</artifactId>
-    <version>1.5</version>
+    <version>1.7</version>
+    <name>Test-Report</name>
+    <description>Test report extension for JUnit 5</description>
+    <url>https://github.com/WazoAkaRapace/TestReport</url>
+    <developers>
+        <developer>
+            <name>WazoAkaRapace</name>
+        </developer>
+    </developers>
 
     <licenses>
         <license>
@@ -19,16 +27,69 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <scm>
+        <url>https://github.com/WazoAkaRapace/TestReport</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>centralDeploy</id>
+            <name>Release deploy</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
+
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
